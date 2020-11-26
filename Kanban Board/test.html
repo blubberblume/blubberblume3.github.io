@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Das <dialog>-Element von HTML | show() vs. showModal()</title>
+	
+	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		header, main, aside, footer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		header:before,
+		main:before,
+		aside:before,
+		footer:before {
+			/*content: attr(class);
+			text-transform: uppercase;
+			position: absolute;
+			top: 1em;
+			left: 1em;*/
+		}
+		header {
+			height: 20vh;
+			background: #257989;
+		}
+		main {
+			height: 60vh;
+			background: #fff;
+		}
+		aside {
+			height: 20vh;
+			background: rgba(78,151,185,0.12);
+		}
+		footer {
+			height: 20vh;
+			background: #1f2428;
+		}
+		@media screen and (min-width: 800px){
+			main {
+				width: 60vw;
+				float: left;
+			}
+			aside {
+				height: 60vh;
+				width: 40vw;
+				float: right;
+			}
+			footer {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<button id="show-dialog">Dialog mit show() öffnen</button>
+		<button id="show-modal-dialog">Dialog mit showModal() öffnen</button>
+	</header>
+	<main class="main">
+		
+	</main>
+	<aside class="aside">
+		<dialog id="dialog">
+
+			<button id="close-dialog">Dialog schließen</button>
+
+			<h2>Das ist mein Dialogfenster</h2>
+
+		</dialog>
+	</aside>
+	<footer></footer class="footer">
+
+	<script>
+		
+		const dialog = document.getElementById("dialog");
+
+		document.getElementById("show-dialog").addEventListener("click", () => {
+			dialog.show();
+		});
+
+		document.getElementById("show-modal-dialog").addEventListener("click", () => {
+			dialog.showModal();
+		});
+
+		document.getElementById("close-dialog").addEventListener("click", () => {
+			dialog.close();
+		});
+
+	</script>
+</body>
+</html>

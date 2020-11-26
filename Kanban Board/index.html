@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KANBAN Board</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <div>KANBAN Board</div>
+      <div class="header-amount-task">99</div>
+    </header>
+
+    <main id="main">
+      <dialog id="dialog">
+        Neue Aufgabe erstellen:
+        <input class="dialog-create-task-field" type="text" />
+        <button class="dialog-create-new-task">Speichern</button>
+        <button class="dialog-cancel-button">Abbrechen</button>
+      </dialog>
+
+      <div id="backlog" class="main-colums" data-expanded="true">
+        <div class="header-main-columns">
+          <h2>Backlog</h2>
+          <div class="main-amount-task">99</div>
+          <button class="new-task-button">+</button>
+        </div>
+      </div>
+
+      <div id="upnext" class="main-colums" data-expanded="true">
+        <div class="header-main-columns">
+          <h2>Up Next</h2>
+          <div class="main-amount-task">99</div>
+          <button class="new-task-button">+</button>
+        </div>
+      </div>
+
+      <div id="inprogress" class="main-colums" data-expanded="true">
+        <div class="header-main-columns">
+          <h2>In Progress</h2>
+          <div class="main-amount-task">99</div>
+          <button class="new-task-button">+</button>
+        </div>
+      </div>
+
+      <div id="done" class="main-colums" data-expanded="true">
+        <div class="header-main-columns">
+          <h2>Done</h2>
+          <div class="main-amount-task">99</div>
+          <button class="new-task-button">+</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="dialogService.js"></script>
+    <script src="taskApiService.js"></script>
+    <script src="taskViewService.js"></script>
+  </body>
+</html>
